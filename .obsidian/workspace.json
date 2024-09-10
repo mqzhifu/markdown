@@ -4,27 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "1c4eb4ae9ad6cd95",
+        "id": "e0883b828fff3cc2",
         "type": "tabs",
-        "dimension": 82.10659898477157,
         "children": [
           {
-            "id": "313a9be342a00e6d",
+            "id": "61ebf82747e9c679",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "游戏/老头环.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
       },
       {
-        "id": "e0883b828fff3cc2",
+        "id": "caf079702606e6a3",
         "type": "tabs",
-        "dimension": 17.893401015228427,
         "children": [
           {
-            "id": "5c16562c9d262dd1",
+            "id": "5bb896b168fb76fa",
             "type": "leaf",
             "state": {
               "type": "markdown-table-editor-view",
@@ -97,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "游戏/老头环.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "游戏/老头环.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +138,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "游戏/老头环.md"
+              }
             }
           }
         ]
@@ -155,35 +161,36 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "313a9be342a00e6d",
+  "active": "61ebf82747e9c679",
   "lastOpenFiles": [
-    "黑魂3.md",
+    "游戏/老头环.md",
     "游戏/黑魂3.md",
+    "触控/游戏匹配服务.md",
+    "触控/新人入职流程.md",
+    "触控/腾讯匹配分析.md",
+    "触控/迁移-咪咕中台.md",
+    "触控/咪咕中台-复盘.md",
+    "触控/120-救护车-ar项目.md",
+    "资源文件/时序图/远程呼叫-录屏截图.png",
+    "触控/AR基础.md",
+    "触控/帧同步.md",
+    "学习/面试大纲.md",
+    "学习/云笔记发展史.md",
+    "netstat命令使用.md",
+    "黑魂3.md",
     "游戏/黑魂3-任务.md",
     "游戏/游戏厂商.md",
     "游戏/多拉A梦 自然王国-攻略.md",
     "游戏/PC游戏-列表.md",
     "游戏/NS游戏列表.md",
     "游戏",
-    "netstat命令使用.md",
     "黑魂3-任务.md",
     "学习/权限管理.md",
     "学习/安卓.md",
     "学习/3D重建.md",
     "学习/-net_框架.md",
     "golang/viper-casbin.md",
-    "触控/AR基础.md",
-    "触控/帧同步.md",
-    "触控/游戏匹配服务.md",
-    "触控/新人入职流程.md",
-    "触控/腾讯匹配分析.md",
-    "触控/迁移-咪咕中台.md",
-    "触控/咪咕中台-复盘.md",
-    "触控/120-ar项目.md",
     "运维/zipkin.md",
-    "config/httpd-conf.md",
-    "config/alertmanager-yml.md",
-    "运维/新服务器.md",
     "资源文件/流程图/游戏匹配-redis.png",
     "Untitled.loom",
     "Untitled 1.loom",
