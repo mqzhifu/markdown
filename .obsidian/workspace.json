@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4cc7cf2aa2f7b56b",
+        "id": "0ab84b3909621024",
         "type": "tabs",
         "children": [
           {
-            "id": "311ed0635f40a8b3",
+            "id": "44723510a4f571ed",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -118,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "2024-09-22.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -142,36 +140,36 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "73ac2a8f8e5f12c6",
+  "active": "44723510a4f571ed",
   "lastOpenFiles": [
-    "游戏/老头环任务.md",
+    "2024-09-30.md",
     "学习基础/初中物理.md",
+    "游戏/老头环-敏捷开局.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "游戏/老头环任务.md",
+    "游戏/老头环地图.md",
+    "游戏/老头环-武器.md",
+    "游戏/老头环-人物基础.md",
+    "游戏/黑魂3.md",
+    "2024-09-22.md",
     "学习基础/vnote.md",
     "学习基础/社保.md",
     "学习基础/云笔记发展史.md",
     "学习/Cassandra.md",
     "学习基础/社保-养老金.md",
     "学习基础",
-    "游戏/老头环-敏捷开局.md",
-    "未命名.canvas",
-    "2024-09-22.md",
     "运维/ElasticSearch-kibana-filebeat.md",
     "golang/pprof.md",
     "golang/GPM-协程调度.md",
     "golang/grpc.md",
     "golang/测试工具-普通工具.md",
-    "游戏/老头环地图.md",
     "游戏/黑魂3-任务.md",
-    "游戏/老头环-武器.md",
-    "游戏/老头环-人物基础.md",
     "游戏/游戏厂商.md",
     "游戏/PC游戏-列表.md",
     "游戏/NS游戏列表.md",
-    "游戏/黑魂3.md",
     "游戏/多拉A梦 自然王国-攻略.md",
     "php/zval&GC&作用域.md",
-    "php/zend编译.md",
-    "php/yield.md",
     "资源文件/时序图/远程呼叫-录屏截图.png",
     "游戏",
     "资源文件/流程图/游戏匹配-redis.png",
