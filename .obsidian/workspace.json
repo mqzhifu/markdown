@@ -11,7 +11,25 @@
             "id": "44723510a4f571ed",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "markdown",
+              "state": {
+                "file": "golang/timer和lock.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "4cd63f423004a393",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "907c318c0c736f2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown-table-editor-view",
               "state": {}
             }
           }
@@ -81,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "golang/timer和lock.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "golang/timer和lock.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +138,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "golang/timer和lock.md"
+              }
             }
           }
         ],
@@ -142,15 +164,18 @@
   },
   "active": "44723510a4f571ed",
   "lastOpenFiles": [
-    "2024-09-30.md",
-    "学习基础/初中物理.md",
-    "游戏/老头环-敏捷开局.md",
-    "未命名 1.canvas",
-    "未命名.canvas",
     "游戏/老头环任务.md",
     "游戏/老头环地图.md",
     "游戏/老头环-武器.md",
     "游戏/老头环-人物基础.md",
+    "游戏/老头环-敏捷开局.md",
+    "学习基础/初中数学.md",
+    "学习基础/手机对比.md",
+    "学习基础/英语-语法.md",
+    "2024-09-30.md",
+    "学习基础/初中物理.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
     "游戏/黑魂3.md",
     "2024-09-22.md",
     "学习基础/vnote.md",
@@ -168,8 +193,6 @@
     "游戏/游戏厂商.md",
     "游戏/PC游戏-列表.md",
     "游戏/NS游戏列表.md",
-    "游戏/多拉A梦 自然王国-攻略.md",
-    "php/zval&GC&作用域.md",
     "资源文件/时序图/远程呼叫-录屏截图.png",
     "游戏",
     "资源文件/流程图/游戏匹配-redis.png",
