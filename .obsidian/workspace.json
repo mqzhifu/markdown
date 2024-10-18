@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "0ab84b3909621024",
+        "id": "22526f68f5cc37b9",
         "type": "tabs",
         "children": [
           {
-            "id": "44723510a4f571ed",
+            "id": "263479db10a19bd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "golang/timer和lock.md",
+                "file": "电影.md",
                 "mode": "source",
                 "source": false
               }
@@ -22,11 +22,11 @@
         ]
       },
       {
-        "id": "4cd63f423004a393",
+        "id": "21535eae8e881543",
         "type": "tabs",
         "children": [
           {
-            "id": "907c318c0c736f2b",
+            "id": "1839e04280566079",
             "type": "leaf",
             "state": {
               "type": "markdown-table-editor-view",
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "golang/timer和lock.md",
+                "file": "电影.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "golang/timer和lock.md",
+                "file": "电影.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,12 +139,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "golang/timer和lock.md"
+                "file": "电影.md"
               }
+            }
+          },
+          {
+            "id": "1e92f7210273e36e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -153,29 +161,32 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "markdown-table-editor:Open Markdown Table Editor": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "markdown-table-editor:Open Markdown Table Editor": false
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "44723510a4f571ed",
+  "active": "263479db10a19bd0",
   "lastOpenFiles": [
+    "学习基础/手表对比.md",
+    "学习基础/手机对比.md",
+    "电影.md",
+    "未命名.canvas",
+    "golang/timer和lock.md",
     "游戏/老头环任务.md",
     "游戏/老头环地图.md",
     "游戏/老头环-武器.md",
     "游戏/老头环-人物基础.md",
     "游戏/老头环-敏捷开局.md",
     "学习基础/初中数学.md",
-    "学习基础/手机对比.md",
     "学习基础/英语-语法.md",
     "2024-09-30.md",
     "学习基础/初中物理.md",
     "未命名 1.canvas",
-    "未命名.canvas",
     "游戏/黑魂3.md",
     "2024-09-22.md",
     "学习基础/vnote.md",
@@ -190,9 +201,6 @@
     "golang/grpc.md",
     "golang/测试工具-普通工具.md",
     "游戏/黑魂3-任务.md",
-    "游戏/游戏厂商.md",
-    "游戏/PC游戏-列表.md",
-    "游戏/NS游戏列表.md",
     "资源文件/时序图/远程呼叫-录屏截图.png",
     "游戏",
     "资源文件/流程图/游戏匹配-redis.png",
