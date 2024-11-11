@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "网络协议/幂等.md",
+                "file": "游戏/老头环-武器.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "网络协议/幂等.md",
+                "file": "游戏/老头环-武器.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "网络协议/幂等.md",
+                "file": "游戏/老头环-武器.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "网络协议/幂等.md"
+                "file": "游戏/老头环-武器.md"
               }
             }
           },
@@ -156,36 +156,36 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "73ac2a8f8e5f12c6",
+  "active": "263479db10a19bd0",
   "lastOpenFiles": [
-    "golang/未命名.md",
-    "网络协议/幂等.md",
+    "游戏/老头环-人物基础.md",
+    "游戏/老头环任务.md",
+    "游戏/老头环-武器.md",
+    "游戏/老头环-敏捷开局.md",
+    "游戏/黑魂3-任务.md",
+    "游戏/黑魂3.md",
+    "游戏/多拉A梦 自然王国-攻略.md",
     "游戏/电影.md",
+    "游戏/奥日2.md",
+    "学习基础/英语-语法.md",
+    "学习基础/云笔记发展史.md",
+    "学习基础/手表对比.md",
+    "网络协议/幂等.md",
+    "golang/未命名.md",
     "redis-nosql/Cassandra.md",
     "分布式/分布式系统.md",
     "mysql/TIDB.md",
-    "游戏/老头环任务.md",
     "游戏/老头环地图.md",
-    "游戏/老头环-武器.md",
-    "游戏/老头环-人物基础.md",
     "游戏/未命名.md",
-    "游戏/老头环-敏捷开局.md",
-    "游戏/奥日2.md",
-    "学习基础/手表对比.md",
     "学习基础/手机对比.md",
     "未命名.canvas",
     "golang/timer和lock.md",
     "学习基础/初中数学.md",
-    "学习基础/英语-语法.md",
     "2024-09-30.md",
     "学习基础/初中物理.md",
     "未命名 1.canvas",
-    "游戏/黑魂3.md",
     "2024-09-22.md",
     "学习基础/vnote.md",
-    "学习基础/社保.md",
-    "学习基础/云笔记发展史.md",
-    "学习基础/社保-养老金.md",
     "学习基础",
     "资源文件/时序图/远程呼叫-录屏截图.png",
     "游戏",
