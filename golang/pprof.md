@@ -248,7 +248,7 @@ go tool pprof \-\-text profile
 
 启动分析工具
 
-> go tool pprof \-http=":8081" profile
+> go tool pprof  -http=":8081" profile
 
 访问图形工具页面：
 
