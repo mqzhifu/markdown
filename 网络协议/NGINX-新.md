@@ -56,20 +56,20 @@
 
 ## core
 
-| 模块 | 描述 |
-| ---- | ---- |
+| 模块                                       | 描述     |
+| ---------------------------------------- | ------ |
 | array list string buffer tree hash queue | 基础数据结构 |
-| crc crypt md5 sha1 | 加密算法 |
-| cycle | 生存周期 |
-| inet | 底层网络相关 |
-| log | 日志 |
-| slab palloc | 内存处理 |
-| proxy | 代理 |
-| regex | 正则 |
-| config_file | 配置文件解析 |
-| epoll |  |
-| event |  |
-| events |  |
+| crc crypt md5 sha1                       | 加密算法   |
+| cycle                                    | 生存周期   |
+| inet                                     | 底层网络相关 |
+| log                                      | 日志     |
+| slab palloc                              | 内存处理   |
+| proxy                                    | 代理     |
+| regex                                    | 正则     |
+| config_file                              | 配置文件解析 |
+| epoll                                    |        |
+| event                                    |        |
+| events                                   |        |
 
 ## email
 
@@ -116,11 +116,11 @@
 
 ## ngx_core_module:
 
-| 模块   | 描述                                               |
-| ------ | -------------------------------------------------- |
-| epoll  | linux 事件驱动库                                   |
-| kqueue | unix linux 事件驱动库                              |
-| select | 轮询 socketFD 操作库                               |
+| 模块     | 描述                                        |
+| ------ | ----------------------------------------- |
+| epoll  | linux 事件驱动库                               |
+| kqueue | unix linux 事件驱动库                          |
+| select | 轮询 socketFD 操作库                           |
 | core   | 对 socketFD 的基础操作，如：accept connect openssl |
 
 rds\-json\-nginx
@@ -129,9 +129,9 @@ lua\-nginx
 
 # 进程组
 
-master+worker+cache(loader+manager)
+master + worker+ cache ( loader + manager )
 
-master：主要管理 worker。如果某 wokrder 进程挂了，它会重新拉起
+master：主要管理 worker。如果某 worker 进程挂了，它会重新拉起
 
 worker：处理下下游戏的网络请求。数量与 CPU 核数对应
 
@@ -146,7 +146,7 @@ cache\-manager:主要是清理一些过期的缓存文件
 这里主要是分析的 main 函数
 
 1. ngx_get_options，主要用于解析命令行中的参数，
-> 如：nginx \-s stop|start|restart
+> 如：nginx \-s stop | start | restart
 
 1. ngx_time_init，初始化并更新时间
 > 如： 全局变量 ngx_cached_time

@@ -155,6 +155,7 @@ leader：负责读写，followe 只负责备份。
 
 新 leader。
 
+leader 及选举机制是属于分区的，而不属于topic。每个分区都有一个leader
 
 
 # replication

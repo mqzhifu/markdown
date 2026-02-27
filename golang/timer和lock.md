@@ -41,7 +41,7 @@ func NewTimer(d Duration) *Timer {
 
 #### timersBucket
 
-runtime （1.13）中，共有 64 个全局的 timersBucket
+runtime （1.13v）中，共有 64 个全局的 timersBucket
 每个 timersBucket 负责管理若干个 timer（整个生命周期）：
 - 创建
 - 销毁

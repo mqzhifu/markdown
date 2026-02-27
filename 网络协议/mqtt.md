@@ -9,24 +9,24 @@ Message Queuing Telemetry Transport
 https://www.cnblogs.com/dongkuo/p/11360419.html
 # 协议号
 
-| 协议号 | KEY | 说明 |  |
-| ---- | ---- | ---- | ---- |
-| 0 | Reserved | 保留 |  |
-| 1 | CONNECT | 请求连接 |  |
-| 2 | CONNACK | 请求应答 |  |
-| 3 | PUBLISH | 发布消息 |  |
-| 4 | PUBACK | \(qos=1\)发布应答 |  |
-| 5 | PUBREC | \(qos=2\)发布已接收，保证传递1 |  |
-| 6 | PUBREL | \(qos=2\)发布释放，保证传递2 |  |
-| 7 | PUBCOMP | \(qos=2\)发布完成，保证传递3 |  |
-| 8 | SUBSCRIBE | 订阅请求 |  |
-| 9 | SUBACK | 订阅应答 |  |
-| 10 | UNSUBSCRIBE | 取消订阅 |  |
-| 11 | UNSUBACK | 取消订阅应答 |  |
-| 12 | PINGREQ | ping请求 |  |
-| 13 | PINGRESP | ping响应 |  |
-| 14 | DISCONNECT | 断开连接 |  |
-| 15 | Reserved | 保留 |  |
+| 协议号 | KEY         | 说明                   |     |
+| --- | ----------- | -------------------- | --- |
+| 0   | Reserved    | 保留                   |     |
+| 1   | CONNECT     | 请求连接                 |     |
+| 2   | CONNACK     | 请求应答                 |     |
+| 3   | PUBLISH     | 发布消息                 |     |
+| 4   | PUBACK      | \(qos=1\)发布应答        |     |
+| 5   | PUBREC      | \(qos=2\)发布已接收，保证传递1 |     |
+| 6   | PUBREL      | \(qos=2\)发布释放，保证传递2  |     |
+| 7   | PUBCOMP     | \(qos=2\)发布完成，保证传递3  |     |
+| 8   | SUBSCRIBE   | 订阅请求                 |     |
+| 9   | SUBACK      | 订阅应答                 |     |
+| 10  | UNSUBSCRIBE | 取消订阅                 |     |
+| 11  | UNSUBACK    | 取消订阅应答               |     |
+| 12  | PINGREQ     | ping请求               |     |
+| 13  | PINGRESP    | ping响应               |     |
+| 14  | DISCONNECT  | 断开连接                 |     |
+| 15  | Reserved    | 保留                   |     |
 
 以上是，MQTT的所有协议号，代码级别可控制的是1\-14，0和15是保留
 
@@ -215,6 +215,8 @@ QoS 1：这个消息比较平衡、折中，可以考虑日常都用这个
 不要把传统的队列系统与MQTT弄混了。
 mqtt 的优点是：小 快
 适于一些性能很低的IOT设备，只是用来传输一些较小的数据，讲究：实时性
+
+MQTT = 轻量 + 长连接 + 低功耗 + 服务端可推送 + 支持海量设备 + 弱网稳定 = 为 IoT 设备量身定制。
 
 
 

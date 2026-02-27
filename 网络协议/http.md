@@ -106,21 +106,22 @@ Cookie：这是最重要的请求头信息之一；
 
 几个常用的头key做个讲解吧：
 
-|key             |desc                                |purpose                                                                                  |
-|----------------|------------------------------------|-----------------------------------------------------------------------------------------|
-|Host            |标识请求的域名                      |后端可根据域名做代理与分发                                                               |
-|User\-Agent     |标识请求方的来源信息                |如：OS版本 设备类型 浏览器版本 等，这个经常用，尤其写爬虫的时候必须得用。反爬虫也会用到。|
-|Accept          |告知接收方，请求方可以接收的数据类型|                                                                                         |
-|Accept\-Charset |可接收\(优先\)的字符集字符集        |如：gbk gb2312 utf8，有时候乱码就是由此字段引起                                          |
-|Accept\-Encoding|传输内容的编码格式                  |gzip 字符流，可用于压缩传输内容，加快传输性能                                            |
-|Cache\-Control  |请求缓存                            |像js css这些纯静态文件，基本不会改变，也没必要每次请求都向S端拿                          |
-|Connection      |是否短时间内开启长连接              |可避免每次连接重复创建TCP消耗性能                                                        |
-|Cookie          |客户端存储的数据                    |HTTP是短连接，不存数据，没有状态，利用cookie就有状态数据了                               |
-|Upgrade         |将连接升级成 websocket               |长连接                                                                                   |
-|Authorization   |当前请求方的用户名密码              |有些网站不需要自行实现登陆，仅通过浏览器做些简单的验证                                   |
-|Referer         |上一个页面的来源                    |可做些反爬虫验证、页面跳转                                                               |
-|Via             |代理                                |nginx代理再发往后端，后端想知道nginx的一些信息                                           |
-|Range           |请求一部分                          |大文件，分多次请求下载                                                                   |
+| key              | desc               | purpose                                         |
+| ---------------- | ------------------ | ----------------------------------------------- |
+| Host             | 标识请求的域名            | 后端可根据域名做代理与分发                                   |
+| User\-Agent      | 标识请求方的来源信息         | 如：OS版本 设备类型 浏览器版本 等，这个经常用，尤其写爬虫的时候必须得用。反爬虫也会用到。 |
+| Accept           | 告知接收方，请求方可以接收的数据类型 |                                                 |
+| Accept\-Charset  | 可接收\(优先\)的字符集字符集   | 如：gbk gb2312 utf8，有时候乱码就是由此字段引起                 |
+| Accept\-Encoding | 传输内容的编码格式          | gzip 字符流，可用于压缩传输内容，加快传输性能                       |
+| Cache\-Control   | 请求缓存               | 像js css这些纯静态文件，基本不会改变，也没必要每次请求都向S端拿             |
+| Connection       | 是否短时间内开启长连接        | 可避免每次连接重复创建TCP消耗性能                              |
+| Cookie           | 客户端存储的数据           | HTTP是短连接，不存数据，没有状态，利用cookie就有状态数据了              |
+| Upgrade          | 将连接升级成 websocket   | 长连接                                             |
+| Authorization    | 当前请求方的用户名密码        | 有些网站不需要自行实现登陆，仅通过浏览器做些简单的验证                     |
+| Referer          | 上一个页面的来源           | 可做些反爬虫验证、页面跳转                                   |
+| Via              | 代理                 | nginx代理再发往后端，后端想知道nginx的一些信息                    |
+| Range            | 请求一部分              | 大文件，分多次请求下载                                     |
+|                  |                    |                                                 |
 
 从这些头中分析，HTTP可做的事情还是很多的：
 
@@ -203,36 +204,36 @@ Content-Range: bytes 0-5
 
 看一下常用的：
 
-|key                           |desc                |purpose                                        |
-|------------------------------|--------------------|-----------------------------------------------|
-|Content\-Encoding             |传输的格式          |gzip 压缩                                      |
-|Transfer\-Encoding            |报文格式\-分块编码  |算是对ws协议的优化吧                           |
-|Last\-Modified                |该资源最后修改时间  |配合请求端来使用缓存机制，节约网络性能         |
-|Connection                    |长连接              |请求方如果使用Upgrade做ws长连接                |
-|Content\-Range                |分片传输时          |请求方想分段下载大文件时使用                   |
-|Content\-Type                 |当前返回的内容类型  |当前S端返回的具体的内容，如：html json image js|
-|Content\-Length               |当前返回的内容总长度|只是方便接收端处理，很少用                     |
-|Location                      |重新获取资源位置    |如果有301 302 这种，可以用此参数跳转，很少用   |
-|Access\-Control\-Allow\-Origin|允许跨域访问的域名  |跨域                                           |
+| key                            | desc       | purpose                           |
+| ------------------------------ | ---------- | --------------------------------- |
+| Content\-Encoding              | 传输的格式      | gzip 压缩                           |
+| Transfer\-Encoding             | 报文格式\-分块编码 | 算是对ws协议的优化吧                       |
+| Last\-Modified                 | 该资源最后修改时间  | 配合请求端来使用缓存机制，节约网络性能               |
+| Connection                     | 长连接        | 请求方如果使用Upgrade做ws长连接              |
+| Content\-Range                 | 分片传输时      | 请求方想分段下载大文件时使用                    |
+| Content\-Type                  | 当前返回的内容类型  | 当前S端返回的具体的内容，如：html json image js |
+| Content\-Length                | 当前返回的内容总长度 | 只是方便接收端处理，很少用                     |
+| Location                       | 重新获取资源位置   | 如果有301 302 这种，可以用此参数跳转，很少用        |
+| Access\-Control\-Allow\-Origin | 允许跨域访问的域名  | 跨域                                |
 
 常用 content\-type：
 
 
-| key | desc | purpose |
-| :--- | :--- | :--- |
-| text/html | \|HTML格式 | 最常用的，也就是给浏览器解析/执行/渲染 |
-| text/xml | XML格式 | 主要是一些配置文件使用，相比html更严谨，但也更复杂些 |
-| image/gif | gif图片格式 |  |
-| image/jpeg | \|jpg图片格式 |  |
-| image/png | png图片格式 |  |
-| application/javascript | js代码 |  |
-| application/json | JSON数据格式，这个最常用，前端从后端拿源数据就是这个 |  |
-| application/pdf | 不太常用 |  |
-| application/msword | 不太常用 |  |
-| application/octet\-stream | 二进制流数据（如常见的文件下载） |  |
-| application/x\-www\-form\-urlencoded | \|form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式） |  |
-| multipart/form\-data   | 表单中进行文件上传时，就需要使用该格式  |  |
-|  |  |  |
+| key                                  | desc                                          | purpose                      |
+| :----------------------------------- | :-------------------------------------------- | :--------------------------- |
+| text/html                            | \|HTML格式                                      | 最常用的，也就是给浏览器解析/执行/渲染         |
+| text/xml                             | XML格式                                         | 主要是一些配置文件使用，相比html更严谨，但也更复杂些 |
+| image/gif                            | gif图片格式                                       |                              |
+| image/jpeg                           | \|jpg图片格式                                     |                              |
+| image/png                            | png图片格式                                       |                              |
+| application/javascript               | js代码                                          |                              |
+| application/json                     | JSON数据格式，这个最常用，前端从后端拿源数据就是这个                  |                              |
+| application/pdf                      | 不太常用                                          |                              |
+| application/msword                   | 不太常用                                          |                              |
+| application/octet\-stream            | 二进制流数据（如常见的文件下载）                              |                              |
+| application/x\-www\-form\-urlencoded | \|form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式） |                              |
+| multipart/form\-data                 | 表单中进行文件上传时，就需要使用该格式                           |                              |
+|                                      |                                               |                              |
 
 > 咋形容呢，其实 content-type 只是一个标识，或者说有很大一部分是给浏览器使用的，比如：解析PDF EXCEL MP4 MP3 格式，浏览器可以直接使用\(浏览器插件\)，而我们日常使用最多的是json，像text/html这种 WEBSERVCIE就帮你搞好了。
 

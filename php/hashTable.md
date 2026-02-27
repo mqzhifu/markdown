@@ -55,18 +55,18 @@ typedef struct bucket {
 } Bucket;
 ```
 
-|  |  |  |
-| :--- | :--- | :--- |
-| h | hash 值，下标为数字索引时，h就是索引值 |  |
-| nKeyLength | key字符串的长度，当nKeyLength为0时表示是数字索引 |  |
-| pData | 指向value，一般是用户数据的副本，如果是指针数据，则指向pDataPtr |  |
-| pDataPtr | 如果是指针数据，此值会指向真正的value，同时上面pData会指向此值 |  |
-| pListNext |  |  |
-| pListLast | Hash拉链的上一个元素 |  |
-| pNext | Hash拉链的下一个元素 |  |
-| pLast |  |  |
-| arKey | key字符串指针 |  |
-|  |  |  |
+|            |                                        |     |
+| :--------- | :------------------------------------- | :-- |
+| h          | hash 值，下标为数字索引时，h就是索引值                 |     |
+| nKeyLength | key字符串的长度，当nKeyLength为0时表示是数字索引        |     |
+| pData      | 指向value，一般是用户数据的副本，如果是指针数据，则指向pDataPtr |     |
+| pDataPtr   | 如果是指针数据，此值会指向真正的value，同时上面pData会指向此值   |     |
+| pListNext  |                                        |     |
+| pListLast  | Hash拉链的上一个元素                           |     |
+| pNext      | Hash拉链的下一个元素                           |     |
+| pLast      |                                        |     |
+| arKey      | key字符串指针                               |     |
+|            |                                        |     |
 
 # hash 函数
 

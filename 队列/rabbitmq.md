@@ -11,17 +11,17 @@ AMQP 协议（advanced message queuing protocol）
 
 
 
-| key | value |
-|:---|:---|
-| Virtual host | 类似namespace，一个实例上，为不同业务划分不同的实例范围  |
-| connect | tcp 连接 |
-| Channel | 把一个TCP连接，再划分为若干的 channel |
-| Exchange | 消息队列交换机 |
-| broker |  一台机器上的一个rabbitmq 实例 |
-| queue | 队列，实际存储消息的容器 |
-| binding | exchang 绑定 queue  或  exchang 绑定 exchang |
-|  |  |
-|  |  |  
+| key          | value                                   |     |
+| :----------- | :-------------------------------------- | --- |
+| Virtual host | 类似namespace，一个实例上，为不同业务划分不同的实例范围        |     |
+| connect      | tcp 连接                                  |     |
+| Channel      | 把一个TCP连接，再划分为若干的 channel                |     |
+| Exchange     | 消息队列交换机                                 |     |
+| broker       | 一台机器上的一个rabbitmq 实例                     |     |
+| queue        | 队列，实际存储消息的容器                            |     |
+| binding      | exchang 绑定 queue  或  exchang 绑定 exchang |     |
+|              |                                         |     |
+|              |                                         |     |
  
 # Exchange
 
@@ -64,20 +64,20 @@ x-match”，这个键的 Value 可以是any或者all
 
 #### 属性/arguments
 
-| key | value |
-| :--- | :--- |
-| x-max-length | 队列消息最大数，超过后，末尾消息被删除 |
-| x-max-length-byte | 消息内容最大字节 |
-| x-message-ttl | 消息存活时间(毫秒) |
-| x-max-priority | 消息优先级。可设置最大权重值（正整数） |
-| x-expires | queue 存活时间(毫秒)，多久未访问 |
-| x-dead-letter-exchange | 投递失败，转到此exchange |
+| key                       | value                  |
+| :------------------------ | :--------------------- |
+| x-max-length              | 队列消息最大数，超过后，末尾消息被删除    |
+| x-max-length-byte         | 消息内容最大字节               |
+| x-message-ttl             | 消息存活时间(毫秒)             |
+| x-max-priority            | 消息优先级。可设置最大权重值（正整数）    |
+| x-expires                 | queue 存活时间(毫秒)，多久未访问   |
+| x-dead-letter-exchange    | 投递失败，转到此exchange       |
 | x-dead-letter-routing-key | 投递失败，根据key  选择exchange |
-| type | classic Quorum |
-| exclusive | 排它，连接断开后，队列删除 |
-| auto  delete | 所有消费者都断开连接了,是否自动删除 |
-| durability | durable 持久化 |
-| Overflow behaviour | 队列满后，是从头部/尾部删除消息 |
+| type                      | classic Quorum         |
+| exclusive                 | 排它，连接断开后，队列删除          |
+| auto  delete              | 所有消费者都断开连接了,是否自动删除     |
+| durability                | durable 持久化            |
+| Overflow behaviour        | 队列满后，是从头部/尾部删除消息       |
 
 
 #### Quorum：仲裁队列。(3.9.x以后)是基于Raft一致性协议实现的一种新型的分布式消息队列
