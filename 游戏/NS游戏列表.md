@@ -1,11 +1,3 @@
-## 游戏下载网站
-
-- xxxxx525.com
-- xxxxx520.cam
-- gamer520.com
-- 2023game.com
-- www.520switch.com
-- shipengliang.com
 
 # 游戏列表
 ## 任天堂出品
