@@ -2,11 +2,18 @@
 # AI 历史
 
 
+万特皆函数： x -> f(x) -> y
+线性函数  非线性函数
+线性回归 偏导数 链式法则 梯度下降
+
+图像AI：卷积神经网络 convolution neural network CNN
+词向量 嵌入矩阵
+word to vec
 # 机器学习
 
 
 
-Machine Learning
+Machine Learning：人工智能的统称，包含深度学习。
 
 # 拟合
 
@@ -20,9 +27,6 @@ Machine Learning
 
 
 神经网络
-
-
-
 
 
 
