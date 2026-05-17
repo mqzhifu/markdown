@@ -138,17 +138,17 @@ func  wwwHandle(w http.ResponseWriter, r *http.Request){
 
 可彩样数据类型
 
-|Count|Profile     |desc                  |
-|-----|------------|----------------------|
-|9    |allocs      |所有过去内存分析采样  |
-|0    |block       |导致阻塞同步的堆栈跟踪|
-|0    |cmdline     |程序启动参数          |
-|0    |goroutine   |当前运行的协程        |
-|0    |heap        |活动对象的内存分配情况|
-|0    |mutex       |导致互斥锁的竞争持有者|
-|0    |profile     |CPU                   |
-|0    |threadcreate|创建新OS线程的        |
-|0    |trace       |对当前程序执行的跟踪  |
+| Count | Profile      | desc        |
+| ----- | ------------ | ----------- |
+| 9     | allocs       | 所有过去内存分析采样  |
+| 0     | block        | 导致阻塞同步的堆栈跟踪 |
+| 0     | cmdline      | 程序启动参数      |
+| 0     | goroutine    | 当前运行的协程     |
+| 0     | heap         | 活动对象的内存分配情况 |
+| 0     | mutex        | 导致互斥锁的竞争持有者 |
+| 0     | profile      | CPU         |
+| 0     | threadcreate | 创建新OS线程的    |
+| 0     | trace        | 对当前程序执行的跟踪  |
 
 full goroutine stack dump
 

@@ -133,7 +133,7 @@ master + worker+ cache ( loader + manager )
 
 master：主要管理 worker。如果某 worker 进程挂了，它会重新拉起
 
-worker：处理下下游戏的网络请求。数量与 CPU 核数对应
+worker：处理下游的网络请求。数量与 CPU 核数对应
 
 > master 也会创建 socker 监听端口，但最终还是会把处理权交给 workder.
 

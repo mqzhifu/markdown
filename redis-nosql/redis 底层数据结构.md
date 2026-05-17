@@ -4,13 +4,13 @@
 [为了拿捏 Redis 数据结构，我画了 40 张图（完整版） - 小林coding - 博客园](https://www.cnblogs.com/xiaolincoding/p/15628854.html)
 
 
-| 数据类型 | 底层数据结构 |
-| :--- | :--- |
-| string | sds |
-| list | quickList+zipList |
-| hash | hashTable+zipList |
-| set | hashTable+intSet |
-| zset | skipTable+zipList |
+| 数据类型   | 底层数据结构            |
+| :----- | :---------------- |
+| string | sds               |
+| list   | quickList+zipList |
+| hash   | hashTable+zipList |
+| set    | hashTable+intSet  |
+| zset   | skipTable+zipList |
 
 # sds
 

@@ -204,4 +204,7 @@ type = nil
 data = nil
 
 
+实际场景中：要反正 一个interface{} 变量， a.OfValue()，根据实际的值判断
+
+
 

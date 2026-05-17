@@ -18,6 +18,8 @@ go build -gcflags="-m -l" main.go
 4. 一个变量过大
 5. 指针被存入 slice、map、channel
 
+# 内存泄露
+
 
 # defer 关闭FD
 

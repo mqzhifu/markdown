@@ -104,3 +104,52 @@ A[中心] --> 监控
 命中率 = 命中次数 /\( 命中次数 + 不命中次数 )
 redis 中两个值： keyspace_hits(命中次数) + keyspace_misses(不命中次数)
 缓存的核心指标就是：命中率，这个值不能低于 95%，实际上应该做到 99%。不然，这个缓存系统就是有问题的
+
+
+# 热KEY
+
+查找热KEY：
+redis-cli --hotkeys
+slowlog/monitor/metrics
+
+如果没有更改的数据，应用层PHP/GO 直接缓存到本地
+有少量修改的：应用层PHP/GO加个监听
+
+多副本KEY：一个值，被同时存多个，访问的时候随机拿一个
+主从分流也可以
+
+限流：这是最不好的办法
+
+
+# BIG-key
+
+
+String	> 10KB
+List/Hash/Set/ZSet	元素数量 > 5000
+任意 Key	> 1MB 基本就危险
+
+
+
+删除阻塞
+网络阻塞
+主从同步卡死
+AOF rewrite 巨慢
+集群 slot 倾斜
+内存碎片
+CPU 飙高
+
+
+
+查找BIT-KEY
+redis-cli --bigkeys
+
+查看具体KEY的详细存储情况
+
+MEMORY USAGE key
+
+拆 Key ：
+比如一个大的map ，根据UID 拆分成10个小KEY
+
+大的字符流，可以压缩存储
+
+是不是选错了结构：bitmap / hyperloglog，替换一些传统的统计KEY
