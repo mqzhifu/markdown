@@ -44,11 +44,29 @@ GO的异常错误机制：error defer panic recover
 7. found bad pointer in Go heap
 8. signal SIGSEGV: segmentation violation
 
+
+# 为什么只有在 defer 中才能捕获panic?
+
+
+panic：当前 goroutine 产生了错误，进入崩溃状态，代码立刻停止执行。
+开始从栈里，逐个函数，向上抛 panic 错误。
+期间：每个函数栈如果有defer 就执行 defer，如果defer 里recover 当前协程状态变更为：正常。不再逐层抛 panic 了。
+
+panic ：基于一个 goroutine
+defer：基于一个函数
+
+
+panic 可以跨 函数，但不能跨 协程
+
+为什么 必须 defer 里才能捕获 painc?
+因为一个函数结束后，最后执行的肯定是defer
+
 # defer
 
 延迟函数/析构函数：函数执行完毕 ，会自动执行此函数
 
 >recover 放在此 defer 函数内才生效，才能捕获 panic
+
 
 #### 源码分析
 
@@ -279,6 +297,12 @@ func test3() (i int) { // 提前声明了返回值i
 - error  这个没太大影响
 - panic 可以使用 defer 捕获
 - fatal  无法捕获
+
+
+- **defer + 匿名闭包**：捕获**变量引用**，执行时读最终值
+- **defer + 直接函数调用**：参数**立即计算**，无坑
+- 循环里用 defer **必须传参 / 新建局部变量**
+
 # 总结
 
 golang 并没有 try catch 这套东西，千万别把概念弄混了

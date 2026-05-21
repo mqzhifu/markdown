@@ -185,6 +185,21 @@ starvationThresholdNs ：值为1e6纳秒（1毫秒），当等待队列中队首
 
 # 读写锁
 
+```
+type RWMutex struct {
+    w           Mutex   // 写锁独占锁
+    writerSem  uint32  // 写等待信号量
+    readerSem  uint32  // 读等待信号量
+    readerCount int32  // 读者计数
+    readerWait  int32  // 等待退出的读者数
+}
+```
+
+
+读 + 读：并行放行，无阻塞
+读 + 写：写等待所有读者退出
+写 + 读：读直接阻塞等写完成
+写 + 写：互斥排队，串行执行
 
 
 如果一个协程加了读锁，另一个协程也可以加读锁，但不能加写锁了

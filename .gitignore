@@ -1,14 +1,12 @@
 go.sum
-.idea/
 config
 .node_modules
 package-lock.json
 vendor
-.DS_Store
-desktop.ini
 docs
 package.json
-latest_log_http
-latest_log_main
+desktop.ini
+.idea/
+.DS_Store
 .obsidian
 ps.md

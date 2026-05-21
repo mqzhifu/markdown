@@ -11,10 +11,45 @@ i++：这是两部操作，读i    i+1。
 加锁：会有、阻塞、睡眠、唤醒等，比较重。
 # CAS
 
+Compare And Swap
+
 在高并发编程中，经常会出现对同一个资源并发访问修改的情况，为了保证最终结果的正确性，一般会使用 锁 和 CAS原子操作 来实现。
 >如：计数统计
 
 锁  和 CAS 的性能：大概比锁快了一丢丢 。个人觉得：快在CPU直接加锁，比在代码层面加锁能快一点点
+
+
+无锁并发（Lock-Free）最核心的底层原语之一。
+比如：count++，它底层是：get count value ,count + 1 ，非原子操作
+传统解法：lock count,get count value,count + 1
+
+Go里
+```
+for {
+
+	atomic.CompareAndSwapInt32(  
+		&value,  
+		old,  
+		new,  
+	)
+
+}
+```
+
+用FOR 来自旋，CompareAndSwapInt32 比较是对的，才执行。
+优点：
+- 不会让出当前执行权
+- atomic使用了 CPU级别的锁机制，略快lock
+
+怎么解决 ABA:加版本号。
+Go底层 大量的使用：CAS
+
+适合场景：
+- 短操作  ，如：C++
+- 低竞争
+- 不想切换线程
+
+
 
 # atomic  类
 
