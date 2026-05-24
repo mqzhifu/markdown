@@ -129,6 +129,7 @@ List/Hash/Set/ZSet	元素数量 > 5000
 任意 Key	> 1MB 基本就危险
 
 
+## 大KEY 问题
 
 删除阻塞
 网络阻塞
