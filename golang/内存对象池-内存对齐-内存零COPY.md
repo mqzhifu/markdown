@@ -90,7 +90,7 @@ type stringStruct struct {
 ```
 
 
-string 是readonly的，不可变的
+string 是 readonly 的，不可变的
 
 
 []byte：
@@ -124,7 +124,7 @@ s := unsafe.String(&b[0], len(b))
 ```
 
 
-尽量少用：string 拼接 string，或者 string()转换，因为会copy出新的内存
+尽量少用：string 拼接 string，或者 string()转换，因为会 copy 出新的内存
 ```
 for i := 0; i < n; i++ {  
 	s += "a"  

@@ -124,7 +124,7 @@ CALL runtime·mstart(SB)
 >findrunnable 才是核心函数，它主要是找寻可执行的 G
 # sysmon
 
-每新建一个线程，就会连带着创建一个 sysmon 线程
+启动代码，就会连带着创建一个 sysmon 线程
 
 会调用 retake() 函数，retake() 函数会遍历所有的P，如果一个P处于执行状态， 且已经连续执行了较长时间，就会被抢占
 

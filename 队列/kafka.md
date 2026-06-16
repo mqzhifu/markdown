@@ -17,13 +17,18 @@ linkedin 公司开发的，使用 scala 语言编写。
 | partition      | 具体存储消息的容器，一个Topic有N个 partition。可以存储在不同的broker上        | 容器   |
 | replication    | partition的副本，用于容灾                                     | 容器   |
 | Consumer       | 消费者，从 kafka 消息队列中读取消息                                 | 角色   |
-| Consumer Group | 由多个 consumer 组成。 消费者组内每个消费者负责消费不同分区的数据                | 角色   |
+| Consumer Group | 由多个 consumer 组成。 每个consumer对应一个partition              | 角色   |
 | Producer       | 生产者，生产消息交投递到 kafka 中                                  | 角色   |
 | Offset         | 队列的 offset (消息的offset) , Consumer 消费的 offset(消费到了第几条) | 文件处理 |
 | Leader         | 每个分区的的主节点(领导者)，只有一个，负责给从分区同步消息                        | 分区管理 |
 | Follower       | 每个分区从节点（多个）从 leader 中同步数据，保持数据同步                      | 分区管理 |
 
+#### broker
 
+这里主要讲集群，最好是：go/java 直连brokder ，不要在这两者之间再加上：lvs / apisix，因为牵扯集群内部的长连接的健康检查和元数据 等。
+
+复制因子，最好是3，保证 能快速选举出leader
+另外，如何保证 3个副本在3个机房呢？你只能在配置brokder 的时候设置，无法手动干预
 
 
 #### Topic
@@ -79,7 +84,7 @@ linkedin 公司开发的，使用 scala 语言编写。
 - 先执行成功，最后 commit，异步执行 fail，消息丢失
 
 
-解决办法：KAFKA 里加入了 producerId 和 sequenceId（不过这两个值，使用者是碰不到的）。由broker 进行去重操作
+解决办法-producter：KAFKA 里加入了 producerId 和 sequenceId（不过这两个值，使用者是碰不到的）。由broker 进行去重操作
 
 - producerId：初始化的时候，会自动分配一个 ProducerID（客户端不可见）
 - sequenceId：生产者每次发送会生成一个自增 ID（从0开始）
@@ -87,6 +92,11 @@ linkedin 公司开发的，使用 scala 语言编写。
 这两个值，主要是保证了单会话的幂等性。
 
 多会话的幂等，需要事务，不过也是基于此，在向 KAFKA SERVER 申请 pid 的时候，会连带返回 producerEpoch
+
+解决办法-consumer：
+1 使用db的一致性索引 ，直接insert，成功代码OK，失败代表重复消费了
+2 先查DB记录的status
+3 消费时，往redis写入值，再次消费时先查redis值是否存在
 
 # Consumer 
 
@@ -138,6 +148,15 @@ Consumer Group 也可以通配符式监听队列
 如果  consumer 有3个，那么 partition 的 3个分区会一对一指向  consumer
 
 一个 consumer 订阅了 topc-1 ， 另外一个 consumer 也订阅了 topic-1 ，且两个 consumer 的group  不同，那么给 topic-1 发消息， 两个 consumer 都会收到消息
+
+如果消费积压怎么办？
+单纯加consumer 是没用的，分区数是4个，你当前已经有4个consumer了，你再加，也不分不到消息
+
+1 新建个组，再订阅这个topic，但会读出历史消息，此时需要在SDK中设置一个参数 ，SDK去找旧的组当前执行到哪里了，但如果之前的组有停机的情况，KAFKA会忽略你SDK的设置，还是得从第一条开始读
+2 创建一个新组，当conusmer 发现消息积压了，不要再执行逻辑了，只单独的把消息转发给新的组。这里注意：consumer 代码是读配置文件改变事件
+
+3 创建一个新组，发送方，往新的组里发，这里依然通过监听配置中心的文件
+4 golang 层面不要串行发送，开多协程发送。但确认机制得改改，不然 后发的先收了ACK，offset 就乱了，得有滑窗口模式，一定是某几条都OK了，才能确最小的那个
 
 #### rebalance
 

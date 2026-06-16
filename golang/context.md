@@ -372,7 +372,7 @@ func parentCancelCtx(parent Context) (*cancelCtx, bool) {
 }
 ```
 
-1. WithCancel  就是 创建一个 CancelCtx  结构体
+1. 4  就是 创建一个 CancelCtx  结构体
 2. propagateCancel：这个就是核心了，主要就是将新的节点，加到父节点的 map 中。
 3. 取消子结点：只能取消 cancelCtx 类型的
 

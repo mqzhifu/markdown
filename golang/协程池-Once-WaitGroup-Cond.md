@@ -120,6 +120,7 @@ state:
 ```
 func main() {
 	var mu sync.Mutex
+	//必须得传入一个锁
 	cond := sync.NewCond(&mu)
 	resName := "" // 共享资源
 
@@ -127,7 +128,7 @@ func main() {
 	for i := 1; i <= 3; i++ {
 		go func(id int) {
 			mu.Lock()
-			// 必须用 for，防止虚假唤醒
+			// 死循环，必须用 for，防止虚假唤醒
 			for resName == "" { 
 				fmt.Printf("协程 %d：资源没下载完，我先睡了...\n", id)
 				cond.Wait() // 释放锁，挂起；被唤醒后，重新抢锁
